@@ -1,5 +1,9 @@
 import sys
 
+## Iterates through each line of the file given and builds 
+## a dictionary. The keys will be the sorted values of each
+## word in the file, if anagrams are found the values will
+## be an list of anagrams for the key.
 
 def populate_dict(path):
 	dictionary = {}
@@ -14,6 +18,9 @@ def populate_dict(path):
 
 		return dictionary
 
+
+## Generates all permutations for a given word
+## a recursive method would be more elegant.
 def generate_permutations(word):
 	permutations = []
 	
@@ -25,11 +32,14 @@ def generate_permutations(word):
 				permutations.append(current_perm) 
 	return permutations
 
+## Converts an array of arrays and return a set 
 def flatten(l):
 	return set(item for sublist in l for item in sublist)
 
 
-
+## Main method. It checks if each permutation of a
+## word exists in the dictionary and appends it to the 
+## result.
 def start(key, path):
 	result = []
 	dictionary = populate_dict(path)
@@ -40,10 +50,10 @@ def start(key, path):
 
 		if sorted_perm in dictionary:
 			result.append(dictionary[sorted_perm]) 
-	
+
+	## returns a set of words that apprear in the dict,
+	## taking into account key subsets.
 	return flatten(result) if len(result) > 0 else "No words found for " + key
-
-
 
 
 if __name__ == '__main__':
