@@ -19,7 +19,7 @@ class JumbleTest(unittest.TestCase):
 
 	def test_jumble_with_no_results(self):
 		generated = jumble.start(test_helper.unknown_word, test_helper.test_file_path)
-		assert generated == "No words found for unknown"
+		assert generated == "No words found for" + test_helper.unknown_word
 
 
 if __name__ == '__main__':
