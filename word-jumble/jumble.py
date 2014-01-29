@@ -23,9 +23,9 @@ def populate_dict(path):
 ## a recursive method would be more elegant.
 def generate_permutations(word):
 	permutations = []
-	
-	for i in range(len(word)):
-		for j in range(len(word)):
+	word_length = range(len(word))
+	for i in word_length:
+		for j in word_length:
 			current_perm = ''.join(word[ i: j+1])
 
 			if len(current_perm) > 0:
