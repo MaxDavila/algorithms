@@ -23,10 +23,9 @@ function groupAnagrams(array){
 	});
 
 	// convert dictionary to array of arrays
-	for(var el in dict) {
-		result.push(dict[el]);
-	}
-	return result;
+	return Object.keys(dict).map(function(key){
+		return dict[key]
+	})
 }
 
 console.log(groupAnagrams(["art", "rat", "bats", "banana", "stab", "tar"]))
