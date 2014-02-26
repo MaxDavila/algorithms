@@ -9,7 +9,9 @@ function longestPalindromeSub(string) {
 				result.push(substr)
 		}
 	}
-	return result
+	return result.sort(function(a,b){
+		return a - b;
+	}).pop()
 }
 
 function isPalindrome(string) {
