@@ -1,5 +1,8 @@
 // Find the longest palindrome substring 
+// Ideal solution is O(n^2)
 
+
+// This solution is O(n^3)
 function longestPalindromeSub(string) {
 	var result = [];
 	for (var i = 0; i < string.length; i++) {
@@ -19,3 +22,4 @@ function isPalindrome(string) {
 }
 
 console.log(longestPalindromeSub('aabaa'))
+console.log(longestPalindromeSub('abacdgfdcaba'))
